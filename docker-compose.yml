@@ -1,0 +1,16 @@
+
+version: "3.3"
+
+services:
+  jupyter:
+    build:
+      context: .
+    # To use a different port of host, change the first 8888.
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - type: "bind"
+        source: ../my_notebooks
+        target: /home/jovyan/work
